@@ -13,8 +13,6 @@ import {
 import ShopActionTypes from "./shop.types";
 
 export function* fetchCollectionsAsync() {
-	yield console.log("TEST");
-
 	try {
 		const collectionRef = firestore.collection("collections");
 
