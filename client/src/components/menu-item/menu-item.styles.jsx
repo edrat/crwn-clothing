@@ -1,19 +1,8 @@
-import styled, { css } from "styled-components";
-
-const largeStyles = css`
-	height: 380px;
-`;
-
-const getMenuItemStyles = (props) => {
-	if (props.size === "large") {
-		return largeStyles;
-	}
-	return "";
-};
+import styled from "styled-components";
 
 export const MenuItemContainer = styled.div`
+	height: ${({ size }) => (size ? "380px" : "240px")};
 	min-width: 30%;
-	height: 240px;
 	flex: 1 1 auto;
 	display: flex;
 	align-items: center;
@@ -41,7 +30,9 @@ export const MenuItemContainer = styled.div`
 		margin-left: 7.5px;
 	}
 
-	${getMenuItemStyles}
+	@media screen and (max-width: 800px) {
+		height: 200px;
+	}
 `;
 
 export const BackgroundImageContainer = styled.div`
